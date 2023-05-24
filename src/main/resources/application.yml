@@ -1,0 +1,88 @@
+spring:
+  jackson:
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      datasource:
+        master:
+          username: root
+          password: 123456
+          url: jdbc:mysql://localhost:3306/log_1?useUnicode=true&userSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        ds1:
+          username: root
+          password: 123456
+          url: jdbc:mysql://localhost:13306/log_1?useUnicode=true&userSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        ds2:
+          username: root
+          password: 123456
+          url: jdbc:mysql://localhost:3306/log_2?useUnicode=true&userSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        ds3:
+          username: root
+          password: 123456
+          url: jdbc:mysql://localhost:3306/log_3?useUnicode=true&userSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        ds4:
+          username: root
+          password: 123456
+          url: jdbc:mysql://localhost:23306/log_1?useUnicode=true&userSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+          type: com.alibaba.druid.pool.DruidDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+
+#  redis:
+#    host: localhost
+#    port: 6379
+#    password: 123456
+#    database: 0
+#    jedis:
+#      pool:
+#        max-active: 8 # 连接池最大连接数（使用负值表示没有限制）
+#        max-idle: 8 # 连接池中的最大空闲连接
+#        min-idle: 0 # 连接池中的最小空闲连接
+#        max-wait: -1ms # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#    cluster:
+#      nodes:
+#        - 127.0.0.1:8001
+#        - 127.0.0.1:8002
+#        - 127.0.0.1:8003
+#        - 127.0.0.1:8004
+#        - 127.0.0.1:8005
+#        - 127.0.0.1:8006
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+    force-response: true
+  tomcat:
+    accept-count: 100
+    threads:
+      max: 800
+      min-spare: 100
+    connection-timeout: 5000
+    max-connections: 8192
+  port: 8080
+async:
+  executor:
+    thread:
+      core_pool_size: 30
+      max_pool_size: 100
+      queue_capacity: 99999
+      name:
+        prefix: async-service-
+#logging:
+#  level:
+#    com.example: info
+#  config: /Users/zhanggeyang/IdeaProjects/mybatis-plus-test/src/main/resources/log/logback.xml
