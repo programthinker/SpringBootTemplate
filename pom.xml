@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.itheima</groupId>
-    <artifactId>ElasticSearchDemo</artifactId>
+    <artifactId>SpringBootTemplate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-boot-template</name>
     <packaging>jar</packaging>
